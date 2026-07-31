@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: r1
+          uri: lb://CLIENT-SERVICE
+          predicates:
+            Path= /api/customers/**
+        - id: r2
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            Path= /api/products/**
