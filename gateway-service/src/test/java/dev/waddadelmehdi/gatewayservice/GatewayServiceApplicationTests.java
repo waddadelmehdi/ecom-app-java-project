@@ -1,10 +1,10 @@
-package dev.waddadelmehdi.gateweyservice;
+package dev.waddadelmehdi.gatewayservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GateweyServiceApplicationTests {
+class GatewayServiceApplicationTests {
 
     @Test
     void contextLoads() {
