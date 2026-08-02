@@ -21,21 +21,21 @@ public class ProductServiceApplication {
         return args -> {
             productRepository.save(Product.builder()
                     .id(UUID.randomUUID().toString())
-                    .name("Computer")
-                    .price(3200)
-                    .quantity(11)
+                    .name("Laptop")
+                    .price(8999)
+                    .quantity(15)
                     .build());
             productRepository.save(Product.builder()
                     .id(UUID.randomUUID().toString())
-                    .name("Printer")
-                    .price(1299)
-                    .quantity(10)
+                    .name("Smartwatch")
+                    .price(1899)
+                    .quantity(20)
                     .build());
             productRepository.save(Product.builder()
                     .id(UUID.randomUUID().toString())
-                    .name("Smart Phone")
+                    .name("4K Monitor")
                     .price(5400)
-                    .quantity(8)
+                    .quantity(12)
                     .build());
 
             productRepository.findAll().forEach(p -> {
