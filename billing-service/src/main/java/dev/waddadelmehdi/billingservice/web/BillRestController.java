@@ -36,4 +36,29 @@ public class BillRestController {
         return bill;
 
     };
+    @GetMapping(path = "/bills")
+    public Iterable<Bill> getBills() {
+
+        Iterable<Bill> bills = billRepository.findAll();
+
+        bills.forEach(bill -> {
+
+            bill.setCustomer(
+                    customerRestClient.getCustomerById(
+                            bill.getCustomerId()
+                    )
+            );
+
+            bill.getProductItems().forEach(productItem -> {
+
+                productItem.setProduct(
+                        productRestClient.getProductById(
+                                productItem.getProductId()
+                        )
+                );
+            });
+        });
+
+        return bills;
+    }
 }
